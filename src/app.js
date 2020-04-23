@@ -234,7 +234,7 @@ function setLession(day) {
       setOnline(li, 'application_programming');
     }
 
-    if ((hour >= 16) && (hour <= 18 && minute <= 0)) {
+    if ((hour >= 18) && (hour <= 19 && minute <= 30)) {
       setOnline(li, 'graphic');
     }
   }
