@@ -130,8 +130,14 @@ function setLession(day) {
       <li id='database_repeat'>
         <span>پایگاه داده - جبرانی</span>
         <span>حجت بیگ نژاد</span>
-        <span>${time} ۱۹:۳۰−۱۸</span>
+        <span>${time} ۱۸−۱۶</span>
         <span><a href='http://79.143.84.27/databe/' class='link'>${goToClass}</a></span>
+      </li>
+      <li id='graphic'>
+        <span>محیط های گرافیکی و ...</span>
+        <span>محمدرضا توسلی</span>
+        <span>${time} ۱۹:۳۰−۱۸</span>
+        <span><a href='http://79.143.84.27/mc/' class='link'>${goToClass}</a></span>
       </li>
       `;
       break;
@@ -197,6 +203,10 @@ function setLession(day) {
   if ((hour >= 18) && (hour <= 19 && minute <= 30)) {
     setOnline(li, 'database_repeat');
   }
+  if ((hour >= 16) && (hour <= 18 && minute <= 0)) {
+    setOnline(li, 'graphic');
+  }
+  
 
 }
 
