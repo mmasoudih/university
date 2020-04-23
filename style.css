@@ -7,6 +7,7 @@
   font-family: "Vazir";
 }
 body {
+  position: relative;
   background: #606c88; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -23,8 +24,10 @@ body {
   width: 1024px;
   height: auto;
   margin: 0 auto;
+  
 }
 .box {
+  
   margin: 20px;
   padding: 30px;
   border-radius: 5px;
@@ -103,19 +106,66 @@ a:active {
 }
 .show-alert{
   background-color: rgb(109, 204, 0);
+  text-align:center;
+}
+.show-all{
+  background-color: rgb(65, 0, 216);
+}
+.return-back{
+  background-color: rgb(65, 0, 216);
+  text-align:center;
 }
 .time{
   position: fixed;
   width:120px;
   top: 0;
-  left: 0;
+  right: 0;
   padding: 5px 10px;
-  background-color: #5347ff;
+  background-color: rgba(0, 0, 0, 0.589);
   color: #fff;
   z-index: 20;
   text-align:center;
 }
-
+.overlay ul p{
+  text-align: center;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #ffd4d4;
+}
+.overlay{
+  width: 100%;
+  position: absolute;
+  top:0;
+  right:0;
+  z-index: 19;
+  margin:0;
+  transition: all .3s;
+  
+}
+.hide{
+  transform: translateY(-110%);
+  animation: slide-reverse .8s;
+}
+.show{
+  transform: translateY(0);
+  animation: slide .8s;
+}
+@keyframes slide {
+  0%{
+    transform: translateY(-110%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes slide-reverse {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-110%);
+  }
+}
 @keyframes animate {
   0% {
     background: rgb(92, 206, 0);
