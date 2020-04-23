@@ -100,11 +100,22 @@ a:active {
   text-align: center;
   padding: 5px;
   color: #fff;
-
 }
 .show-alert{
   background-color: rgb(109, 204, 0);
 }
+.time{
+  position: fixed;
+  width:120px;
+  top: 0;
+  left: 0;
+  padding: 5px 10px;
+  background-color: #5347ff;
+  color: #fff;
+  z-index: 20;
+  text-align:center;
+}
+
 @keyframes animate {
   0% {
     background: rgb(92, 206, 0);
