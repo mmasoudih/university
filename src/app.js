@@ -15,8 +15,16 @@ function callAllFunc() {
   showInfoAlert();
   showAlert();
   showFooter();
+  showTime();
 }
-function showFooter(){
+
+function showTime() {
+  setInterval(() => {
+    document.querySelector('.time').innerHTML = `${moment().format('HH:mm:ss')}`;
+  }, 1000);
+}
+
+function showFooter() {
   document.querySelector('.footer').innerHTML = `
   <p>
       اگر مشکلی یا پیشنهادی داشتین با لمس 
@@ -25,8 +33,9 @@ function showFooter(){
     </p>
   `;
 }
-function showAlert(){
-  document.querySelector('.show-alert').addEventListener('click', e=>{
+
+function showAlert() {
+  document.querySelector('.show-alert').addEventListener('click', e => {
     e.preventDefault();
     Swal.fire({
       title: 'راهنما',
@@ -36,16 +45,17 @@ function showAlert(){
     })
   });
 }
-function showInfoAlert(){
-  if(localStorage.getItem('popup') === null){
+
+function showInfoAlert() {
+  if (localStorage.getItem('popup') === null) {
     Swal.fire({
       title: 'راهنما',
       text: 'کنار هر کلاس اگر دایره سبز بود یعنی الان کلاس آنلاین هست و با زدن روی دکمه کپی لینک کلاس لینک رو میتونین کپی کنین و داخل نرم افزار Adobe Connect و یا داخل سیستمون باز کنید.',
       icon: 'info',
       confirmButtonText: 'حله! فهمیدم'
-    }).then((e)=>{
-      if(e.value){
-        localStorage.setItem('popup','hidden');
+    }).then((e) => {
+      if (e.value) {
+        localStorage.setItem('popup', 'hidden');
       }
     })
   }
@@ -127,12 +137,7 @@ function setLession(day) {
         <span>${time} ۱۳−۱۰</span>
         <span><a href='http://79.143.84.27/mob1/' class='link'>${goToClass}</a></span>
       </li>
-      <li id='database_repeat'>
-        <span>پایگاه داده - جبرانی</span>
-        <span>حجت بیگ نژاد</span>
-        <span>${time} ۱۸−۱۶</span>
-        <span><a href='http://79.143.84.27/databe/' class='link'>${goToClass}</a></span>
-      </li>
+      
       <li id='graphic'>
         <span>محیط های گرافیکی و ...</span>
         <span>محمدرضا توسلی</span>
@@ -167,7 +172,7 @@ function setLession(day) {
       `;
       break;
 
-   
+
   }
   let li = document.querySelectorAll('li');
 
@@ -200,13 +205,11 @@ function setLession(day) {
   if ((hour >= 10) && (hour <= 13)) {
     setOnline(li, 'application_programming');
   }
-  if ((hour >= 18) && (hour <= 19 && minute <= 30)) {
-    setOnline(li, 'database_repeat');
-  }
+
   if ((hour >= 16) && (hour <= 18 && minute <= 0)) {
     setOnline(li, 'graphic');
   }
-  
+
 
 }
 
@@ -240,3 +243,15 @@ function copyToClipBoard(a) {
     });
   });
 }
+
+/*
+  if ((hour >= 18) && (hour <= 19 && minute <= 30)) {
+    setOnline(li, 'database_repeat');
+  }
+<li id='database_repeat'>
+  <span>پایگاه داده - جبرانی</span>
+  <span>حجت بیگ نژاد</span>
+  <span>${time} ۱۸−۱۶</span>
+  <span><a href='http://79.143.84.27/databe/' class='link'>${goToClass}</a></span>
+</li>
+*/
