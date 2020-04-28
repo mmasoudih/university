@@ -92,7 +92,9 @@ a:active {
   text-decoration: none;
   color:#fff;
   background-color: rgb(0, 110, 255);
-  box-shadow: 0 0 10px rgb(202, 202, 202);
+  box-shadow: unset;
+  border-radius: 2px;
+
 }
 .footer{
   width: 100%;
