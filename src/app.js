@@ -144,9 +144,18 @@ function setLession(day) {
     case 3:
       //چهارشنبه
       document.querySelector('ul').innerHTML += `
-      <li>
-        <span>کلاسی موجود نیست</span>
+      <li id='database-repeat'>
+        <span>
+          پایگاه داده -
+        <span style='color:red'>
+        <strong>جبرانی</strong>
+        </span>
+        </span>
+        <span>حجت بیک نژاد</span>
+        <span>از ${time} ۱۶</span>
+        <span><a href='http://79.143.84.27/databe/' class='link'>${goToClass}</a></span>
       </li>
+      
       `;
       break;
     case 4:
@@ -238,6 +247,14 @@ function setLession(day) {
       setOnline(li, 'graphic');
     }
   }
+  // ساعت چهارشنبه
+  if (day == 3) {
+    if ((hour >= 16) && (hour <= 18)) {
+      setOnline(li, 'database-repeat');
+    }
+  }
+  
+  
   console.log(day);
 
 }
@@ -287,13 +304,13 @@ function showOverlay() {
     <span>طراحی وب</span>
     <span>رضا ابراهیم زاده</span>
     <span>${time} ۱۴:۳۰−۱۱</span>
-    <span><a href='http://79.143.84.27/web1/' class='link'>برو تو کلاس</a></span>
+    <span><a href='http://79.143.84.27/web1/' class='link'>${goToClass}</a></span>
   </li>
   <li id='programming'>
     <span>برنامه نویسی ۱</span>
     <span>مهدی صادق زاده</span>
     <span>${time} ۱۸:۳۰-۱۵:۳۰</span>
-    <span><a href='http://79.143.84.27/programming/' class='link'>برو تو کلاس</a></span>
+    <span><a href='http://79.143.84.27/programming/' class='link'>${goToClass}</a></span>
   </li>
   <p>
   &#8659;
@@ -331,6 +348,25 @@ function showOverlay() {
     <span>${time} ۱۸:۳۰−۱۷</span>
     <span><a href='http://79.143.84.27/thl/' class='link'>${goToClass}</a></span>
   </li>
+
+  <p>
+  &#8659;
+  چهارشنبه
+  &#8659;
+  </p>
+  <li id='database-repeat'>
+    <span>
+      پایگاه داده -
+    <span style='color:red'>
+    <strong>جبرانی</strong>
+    </span>
+    </span>
+    <span>حجت بیک نژاد</span>
+    <span>از ${time} ۱۶</span>
+    <span><a href='http://79.143.84.27/databe/' class='link'>${goToClass}</a></span>
+  </li>
+
+
   <p>
   &#8659;
   پنج‌شنبه
