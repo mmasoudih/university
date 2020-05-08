@@ -26,5 +26,17 @@
   </div>
   <div class="footer"></div>
   <script src="build/app.bundle.js"></script>
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "ddfffeaa-a02e-4745-bc93-1002674fe764",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
 </body>
 </html>
